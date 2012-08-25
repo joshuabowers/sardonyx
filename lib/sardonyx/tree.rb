@@ -11,5 +11,13 @@ module Sardonyx
     def each(&block)
       nil
     end
+    
+    def rotate_left
+      nil
+    end
+    
+    def rotate_right
+      nil
+    end
   end
 end
