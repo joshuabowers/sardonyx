@@ -1,4 +1,4 @@
 require 'rspec'
-require 'sardonyx/version'
+require 'sardonyx'
 
 include Sardonyx

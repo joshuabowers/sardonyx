@@ -1,5 +1,5 @@
 name: sardonyx
-summary: "TODO: Summary"
+summary: "A Red-Black Tree implementation in Ruby"
 description: "TODO: Description"
 license: MIT
 authors: Joshua Bowers
