@@ -35,6 +35,7 @@ module Sardonyx
     def rotate_right
       l, q, c = [left, self, c]
       a, p, b = [left.left, left, left.right]
+      
     end
   end
 end
