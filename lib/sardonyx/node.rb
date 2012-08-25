@@ -3,12 +3,29 @@ module Sardonyx
     attr_accessor :left, :right, :parent
     attr_accessor :value, :color
     
+    def initialize(attributes = {})
+      {color: :black}.merge(attributes).each do |key, value|
+        send("#{key}=", value)
+      end
+    end
+    
     def grandparent
-      nil
+      parent.parent unless parent.nil?
     end
     
     def uncle
-      nil
+      g = grandparent
+      (parent == g.left ? g.right : g.left) if g
+    end
+    
+    def left=(node)
+      @left = node
+      node.parent = self
+    end
+    
+    def right=(node)
+      @right = node
+      node.parent = self
     end
   end
 end
