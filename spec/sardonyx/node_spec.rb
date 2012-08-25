@@ -39,3 +39,16 @@ describe "A right nested node" do
   its(:grandparent) { should == root }
   its(:uncle) { should == root.left }
 end
+
+describe "Given a root node" do
+  let(:root_q) { Sardonyx::Node.new(value: "Q", left: Sardonyx::Node.new(value: "P", left: Sardonyx::Node.new(value: "A"), right: Sardonyx::Node.new(value: "B")), right: Sardonyx::Node.new(value: "C")) }
+  let(:root_p) { Sardonyx::Node.new(value: "P", left: Sardonyx::Node.new(value: "A"), right: Sardonyx::Node.new(value: "Q", left: Sardonyx::Node.new(value: "B"), right: Sardonyx::Node.new(value: "C"))) }
+  describe "A right rotation" do
+    subject { root_q }
+    its(:rotate_right) { should == root_p }
+  end
+  describe "A left rotation" do
+    subject { root_p }
+    its(:rotate_left) { should == root_q }
+  end
+end

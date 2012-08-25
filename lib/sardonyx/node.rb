@@ -27,5 +27,14 @@ module Sardonyx
       @right = node
       node.parent = self
     end
+    
+    def rotate_left
+      nil
+    end
+    
+    def rotate_right
+      l, q, c = [left, self, c]
+      a, p, b = [left.left, left, left.right]
+    end
   end
 end
